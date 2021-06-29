@@ -9,8 +9,7 @@ import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 import static org.openqa.selenium.Keys.*;
 import static ru.netology.patterns.data.DataGenerator.*;
 import static ru.netology.patterns.data.DataGenerator.Generate.generateUser;
@@ -44,7 +43,6 @@ public class CardOrderDeliveryTest {
         $("[data-test-id=date] .input__control").sendKeys(Keys.chord(SHIFT, HOME, DELETE));
         $("[data-test-id=date] .input__control").setValue(secondMeetingDate);
         $(".button").click();
-        $("[data-test-id='replan-notification'] .notification__content").shouldHave(exactText("У вас уже запланирована встреча на другую дату. Перепланировать?"));
         $("[data-test-id='replan-notification'] .button").click();
         $("[data-test-id='success-notification'] .notification__content").shouldBe(visible, Duration.ofSeconds(15))
                 .shouldHave(exactText("Встреча успешно запланирована на " + secondMeetingDate));
