@@ -1,0 +1,1 @@
+# Project Sample  [![Build status](https://ci.appveyor.com/api/projects/status/akq6dt8eruos4s2r?svg=true)](https://ci.appveyor.com/project/antidot8/patterns)
