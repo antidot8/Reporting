@@ -34,8 +34,6 @@ public class DataGenerator {
         return faker.phoneNumber().phoneNumber();
     }
 
-    @AllArgsConstructor
-    @Value
     public static class Generate {
 
         public static UserInfo generateUser() {
@@ -43,29 +41,10 @@ public class DataGenerator {
         }
     }
 
-    @Data
     @Value
     public static class UserInfo {
         String city;
         String name;
         String phone;
-
-        public UserInfo(String city, String name, String phone) {
-            this.city = city;
-            this.name = name;
-            this.phone = phone;
-        }
-
-        public String getCity() {
-            return city;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public String getPhone() {
-            return phone;
-        }
     }
 }
